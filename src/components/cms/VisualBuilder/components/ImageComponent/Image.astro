@@ -1,14 +1,21 @@
 ---
-import { DisplaySettingsFragment, ImageElementFragment } from '../../../../../services/graphql/__generated/sdk'
-import { getImageElementStyles } from './ImageStyling'
-import { ContentPayload } from '../../../../../services/shared/ContentPayload'
+import {
+    DisplaySettingsFragment,
+    ImageComponentFragment,
+} from '../../../../../services/graphql/__generated/sdk';
+import { getImageComponentStyles } from './ImageStyling';
+import { ContentPayload } from '../../../../../services/shared/ContentPayload';
 
 export interface Props {
-  data: ImageElementFragment;
-  displaySettings: DisplaySettingsFragment[];
-  contentPayload: ContentPayload;
+    data: ImageComponentFragment;
+    displaySettings: DisplaySettingsFragment[];
+    contentPayload: ContentPayload;
 }
-const { data, displaySettings } = Astro.props as Props
+const { data, displaySettings } = Astro.props as Props;
 ---
 
-<img class:list={getImageElementStyles(displaySettings)} src={data.imageLink.url.default} alt={data.altText} />
+<img
+    class:list={getImageComponentStyles(displaySettings)}
+    src={data.imageLink.url.default}
+    alt={data.altText}
+/>

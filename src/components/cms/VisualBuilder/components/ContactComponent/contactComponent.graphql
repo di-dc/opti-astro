@@ -1,0 +1,5 @@
+fragment ContactComponent on ContactComponent {
+    Contact {
+        key
+    }
+}

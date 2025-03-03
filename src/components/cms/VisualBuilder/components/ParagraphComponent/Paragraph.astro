@@ -1,12 +1,15 @@
 ---
-import { DisplaySettingsFragment, ParagraphElementFragment } from '../../../../../services/graphql/__generated/sdk'
-import { ContentPayload } from '../../../../../services/shared/ContentPayload'
+import {
+    DisplaySettingsFragment,
+    ParagraphComponentFragment,
+} from '../../../../../services/graphql/__generated/sdk';
+import { ContentPayload } from '../../../../../services/shared/ContentPayload';
 export interface Props {
-  data: ParagraphElementFragment;
-  displaySettings: DisplaySettingsFragment[];
-  contentPayload: ContentPayload;
+    data: ParagraphComponentFragment;
+    displaySettings: DisplaySettingsFragment[];
+    contentPayload: ContentPayload;
 }
-const { data } = Astro.props as Props
+const { data } = Astro.props as Props;
 ---
 
 <div set:html={data.text.html} />

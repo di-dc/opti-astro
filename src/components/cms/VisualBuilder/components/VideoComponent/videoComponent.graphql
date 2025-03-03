@@ -1,4 +1,4 @@
-fragment VideoElement on VideoElement {
+fragment VideoComponent on VideoComponent {
     placeholder {
         url {
             default

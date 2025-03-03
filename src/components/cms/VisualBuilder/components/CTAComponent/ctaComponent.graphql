@@ -1,4 +1,4 @@
-fragment CTAElement on CTAElement {
+fragment CTAComponent on CTAComponent {
     Text
     Link {
         default
