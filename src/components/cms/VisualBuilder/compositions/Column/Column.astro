@@ -1,26 +1,29 @@
 ---
-import Elements from '../../components/_Components.astro'
-import { CompositionStructureNode } from '../../../../../services/graphql/__generated/sdk'
-import { getColumnStyles } from './ColumnHelper'
-import { ContentPayload } from '../../../../../services/shared/ContentPayload'
+import Components from '../../components/_Components.astro';
+import { CompositionStructureNode } from '../../../../../services/graphql/__generated/sdk';
+import { getColumnStyles } from './ColumnHelper';
+import { ContentPayload } from '../../../../../services/shared/ContentPayload';
 export interface Props {
-  column: CompositionStructureNode;
-  contentPayload: ContentPayload;
+    column: CompositionStructureNode;
+    contentPayload: ContentPayload;
 }
-const { column, contentPayload } = Astro.props as Props
-const styles = getColumnStyles(column)
+const { column, contentPayload } = Astro.props as Props;
+const styles = getColumnStyles(column);
 ---
+
 <!--<h3>this is a column</h3>-->
 <div
-  class:list={styles}
-  class="flex-1 flex flex-col flex-nowrap vb:col"
-  data-epi-block-id={column.key}
+    class:list={styles}
+    class="vb:col flex flex-1 flex-col flex-nowrap"
+    data-epi-block-id={column.key}
 >
-  {column.nodes?.map((item: any) => (
-    // <p>{item.displaySettings.map((ds: any) => (`${ds.key} : ${ds.value}`))}</p>
+    {
+        column.nodes?.map((item: any) => (
+            // <p>{item.displaySettings.map((ds: any) => (`${ds.key} : ${ds.value}`))}</p>
 
-    <div data-epi-block-id={item?.key}>
-      <Elements contentPayload={contentPayload} data={item} />
-    </div>
-  ))}
+            <div data-epi-block-id={item?.key}>
+                <Components contentPayload={contentPayload} data={item} />
+            </div>
+        ))
+    }
 </div>

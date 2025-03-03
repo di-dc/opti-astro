@@ -1,13 +1,16 @@
 ---
-import { DisplaySettingsFragment, VideoElementFragment } from '../../../../../services/graphql/__generated/sdk'
-import { ContentPayload } from '../../../../../services/shared/ContentPayload'
+import {
+    DisplaySettingsFragment,
+    VideoComponentFragment,
+} from '../../../../../services/graphql/__generated/sdk';
+import { ContentPayload } from '../../../../../services/shared/ContentPayload';
 
 export interface Props {
-  data: VideoElementFragment;
-  displaySettings: DisplaySettingsFragment[];
-  contentPayload: ContentPayload;
+    data: VideoComponentFragment;
+    displaySettings: DisplaySettingsFragment[];
+    contentPayload: ContentPayload;
 }
-const { data } = Astro.props as Props
+const { data } = Astro.props as Props;
 ---
 
-<video src={data.video.url.default} autoplay muted />
+<video src={data.video.url.default} autoplay muted></video>

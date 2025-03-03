@@ -1,0 +1,5 @@
+fragment EventComponent on EventComponent {
+    Title
+    Date
+    Address
+}

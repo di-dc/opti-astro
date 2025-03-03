@@ -1,0 +1,5 @@
+fragment ParagraphComponent on ParagraphComponent {
+    text {
+        html
+    }
+}

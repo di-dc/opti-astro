@@ -1,11 +1,15 @@
 ---
-import { CtaElementFragment, DisplaySettingsFragment } from '../../../../../services/graphql/__generated/sdk'
-import { ContentPayload } from '../../../../../services/shared/ContentPayload'
+import {
+    CtaComponentFragment,
+    DisplaySettingsFragment,
+} from '../../../../../services/graphql/__generated/sdk';
+import { ContentPayload } from '../../../../../services/shared/ContentPayload';
 export interface Props {
-  data: CtaElementFragment;
-  displaySettings: DisplaySettingsFragment[];
-  contentPayload: ContentPayload;
+    data: CtaComponentFragment;
+    displaySettings: DisplaySettingsFragment[];
+    contentPayload: ContentPayload;
 }
-const { data } = Astro.props as Props
+const { data } = Astro.props as Props;
 ---
+
 <a href={data.Link.default} class="text-2xl">{data.Text}</a>

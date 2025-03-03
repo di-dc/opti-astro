@@ -1,4 +1,4 @@
-fragment CardElement on CardElement {
+fragment CardComponent on CardComponent {
     Heading
     Subheading
     OverlayText

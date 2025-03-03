@@ -1,4 +1,4 @@
-fragment HeroElement on HeroElement {
+fragment HeroComponent on HeroComponent {
     Video {
         url {
             default
