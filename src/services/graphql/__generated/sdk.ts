@@ -554,77 +554,6 @@ export type CardComponentWhereInput = {
   _or?: InputMaybe<Array<InputMaybe<CardComponentWhereInput>>>;
 };
 
-export type CarouselBlock = IData & _IComponent & _IContent & {
-  __typename?: 'CarouselBlock';
-  CarouselItemsContentArea?: Maybe<Array<Maybe<_IContent>>>;
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type CarouselBlock_FulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type CarouselBlock_LinkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type CarouselBlockAutocomplete = {
-  __typename?: 'CarouselBlockAutocomplete';
-  CarouselItemsContentArea?: Maybe<_IContentAutocomplete>;
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type CarouselBlockFacet = {
-  __typename?: 'CarouselBlockFacet';
-  CarouselItemsContentArea?: Maybe<_IContentFacet>;
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-export type CarouselBlockOrderByInput = {
-  CarouselItemsContentArea?: InputMaybe<_IContentOrderByInput>;
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type CarouselBlockOutput = {
-  __typename?: 'CarouselBlockOutput';
-  autocomplete?: Maybe<CarouselBlockAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<CarouselBlockFacet>;
-  item?: Maybe<CarouselBlock>;
-  items?: Maybe<Array<Maybe<CarouselBlock>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type CarouselBlockOutputTotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type CarouselBlockWhereInput = {
-  CarouselItemsContentArea?: InputMaybe<_IContentWhereInput>;
-  _and?: InputMaybe<Array<InputMaybe<CarouselBlockWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<CarouselBlockWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<CarouselBlockWhereInput>>>;
-};
-
 export type CompositionComponentNode = ICompositionComponentNode & ICompositionNode & {
   __typename?: 'CompositionComponentNode';
   component?: Maybe<_IComponent>;
@@ -2279,89 +2208,6 @@ export type LandingPageWhereInput = {
   _or?: InputMaybe<Array<InputMaybe<LandingPageWhereInput>>>;
 };
 
-export type LayoutContainerBlock = IData & _IComponent & _IContent & {
-  __typename?: 'LayoutContainerBlock';
-  ColumnsCount?: Maybe<Scalars['Int']['output']>;
-  ContainerBackgroundColor?: Maybe<Scalars['String']['output']>;
-  ContainerBackgroundImage?: Maybe<ContentReference>;
-  ContainerMarginBottom?: Maybe<Scalars['String']['output']>;
-  ContainerMarginTop?: Maybe<Scalars['String']['output']>;
-  ContainerPaddingBottom?: Maybe<Scalars['String']['output']>;
-  ContainerPaddingTop?: Maybe<Scalars['String']['output']>;
-  GapSize?: Maybe<Scalars['String']['output']>;
-  LayoutContentArea?: Maybe<Array<Maybe<_IContent>>>;
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type LayoutContainerBlock_FulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type LayoutContainerBlock_LinkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type LayoutContainerBlockAutocomplete = {
-  __typename?: 'LayoutContainerBlockAutocomplete';
-  ContainerBackgroundImage?: Maybe<ContentReferenceAutocomplete>;
-  LayoutContentArea?: Maybe<_IContentAutocomplete>;
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type LayoutContainerBlockFacet = {
-  __typename?: 'LayoutContainerBlockFacet';
-  ContainerBackgroundImage?: Maybe<ContentReferenceFacet>;
-  LayoutContentArea?: Maybe<_IContentFacet>;
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-export type LayoutContainerBlockOrderByInput = {
-  ContainerBackgroundImage?: InputMaybe<ContentReferenceOrderByInput>;
-  LayoutContentArea?: InputMaybe<_IContentOrderByInput>;
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type LayoutContainerBlockOutput = {
-  __typename?: 'LayoutContainerBlockOutput';
-  autocomplete?: Maybe<LayoutContainerBlockAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<LayoutContainerBlockFacet>;
-  item?: Maybe<LayoutContainerBlock>;
-  items?: Maybe<Array<Maybe<LayoutContainerBlock>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type LayoutContainerBlockOutputTotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type LayoutContainerBlockWhereInput = {
-  ContainerBackgroundImage?: InputMaybe<ContentReferenceWhereInput>;
-  LayoutContentArea?: InputMaybe<_IContentWhereInput>;
-  _and?: InputMaybe<Array<InputMaybe<LayoutContainerBlockWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<LayoutContainerBlockWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<LayoutContainerBlockWhereInput>>>;
-};
-
 export type Link = {
   __typename?: 'Link';
   target?: Maybe<Scalars['String']['output']>;
@@ -2483,7 +2329,10 @@ export type LinkWhereInput = {
 export enum Locales {
   All = 'ALL',
   Neutral = 'NEUTRAL',
-  En = 'en'
+  En = 'en',
+  Es = 'es',
+  Fr = 'fr',
+  FrCa = 'fr_CA'
 }
 
 export type MediaMetadata = IContentMetadata & IInstanceMetadata & IMediaMetadata & {
@@ -2521,155 +2370,6 @@ export type MediaMetadataContentArgs = {
 
 export type MediaMetadataDisplayNameArgs = {
   highlight?: InputMaybe<HighlightOptions>;
-};
-
-export type MegaMenuGroupBlock = IData & _IComponent & _IContent & {
-  __typename?: 'MegaMenuGroupBlock';
-  MegaMenuContentArea?: Maybe<Array<Maybe<_IContent>>>;
-  MegaMenuUrl?: Maybe<ContentUrl>;
-  MenuMenuHeading?: Maybe<Scalars['String']['output']>;
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type MegaMenuGroupBlock_FulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type MegaMenuGroupBlock_LinkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type MegaMenuGroupBlockAutocomplete = {
-  __typename?: 'MegaMenuGroupBlockAutocomplete';
-  MegaMenuContentArea?: Maybe<_IContentAutocomplete>;
-  MegaMenuUrl?: Maybe<ContentUrlAutocomplete>;
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type MegaMenuGroupBlockFacet = {
-  __typename?: 'MegaMenuGroupBlockFacet';
-  MegaMenuContentArea?: Maybe<_IContentFacet>;
-  MegaMenuUrl?: Maybe<ContentUrlFacet>;
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-export type MegaMenuGroupBlockOrderByInput = {
-  MegaMenuContentArea?: InputMaybe<_IContentOrderByInput>;
-  MegaMenuUrl?: InputMaybe<ContentUrlOrderByInput>;
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type MegaMenuGroupBlockOutput = {
-  __typename?: 'MegaMenuGroupBlockOutput';
-  autocomplete?: Maybe<MegaMenuGroupBlockAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<MegaMenuGroupBlockFacet>;
-  item?: Maybe<MegaMenuGroupBlock>;
-  items?: Maybe<Array<Maybe<MegaMenuGroupBlock>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type MegaMenuGroupBlockOutputTotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type MegaMenuGroupBlockWhereInput = {
-  MegaMenuContentArea?: InputMaybe<_IContentWhereInput>;
-  MegaMenuUrl?: InputMaybe<ContentUrlWhereInput>;
-  _and?: InputMaybe<Array<InputMaybe<MegaMenuGroupBlockWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<MegaMenuGroupBlockWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<MegaMenuGroupBlockWhereInput>>>;
-};
-
-export type MenuNavigationBlock = IData & _IComponent & _IContent & {
-  __typename?: 'MenuNavigationBlock';
-  MenuNavigationHeading?: Maybe<Scalars['String']['output']>;
-  NavigationLinks?: Maybe<Array<Maybe<Link>>>;
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type MenuNavigationBlock_FulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type MenuNavigationBlock_LinkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type MenuNavigationBlockAutocomplete = {
-  __typename?: 'MenuNavigationBlockAutocomplete';
-  NavigationLinks?: Maybe<LinkAutocomplete>;
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type MenuNavigationBlockFacet = {
-  __typename?: 'MenuNavigationBlockFacet';
-  NavigationLinks?: Maybe<LinkFacet>;
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-export type MenuNavigationBlockOrderByInput = {
-  NavigationLinks?: InputMaybe<LinkOrderByInput>;
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type MenuNavigationBlockOutput = {
-  __typename?: 'MenuNavigationBlockOutput';
-  autocomplete?: Maybe<MenuNavigationBlockAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<MenuNavigationBlockFacet>;
-  item?: Maybe<MenuNavigationBlock>;
-  items?: Maybe<Array<Maybe<MenuNavigationBlock>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type MenuNavigationBlockOutputTotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type MenuNavigationBlockWhereInput = {
-  NavigationLinks?: InputMaybe<LinkWhereInput>;
-  _and?: InputMaybe<Array<InputMaybe<MenuNavigationBlockWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<MenuNavigationBlockWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<MenuNavigationBlockWhereInput>>>;
 };
 
 export enum OrderBy {
@@ -2862,7 +2562,6 @@ export type Query = {
   BlogPostPage?: Maybe<BlogPostPageOutput>;
   CTAComponent?: Maybe<CtaComponentOutput>;
   CardComponent?: Maybe<CardComponentOutput>;
-  CarouselBlock?: Maybe<CarouselBlockOutput>;
   ContactComponent?: Maybe<ContactComponentOutput>;
   ContactPage?: Maybe<ContactPageOutput>;
   Data?: Maybe<DataOutput>;
@@ -2873,16 +2572,9 @@ export type Query = {
   ImageComponent?: Maybe<ImageComponentOutput>;
   ImageMedia?: Maybe<ImageMediaOutput>;
   LandingPage?: Maybe<LandingPageOutput>;
-  LayoutContainerBlock?: Maybe<LayoutContainerBlockOutput>;
-  MegaMenuGroupBlock?: Maybe<MegaMenuGroupBlockOutput>;
-  MenuNavigationBlock?: Maybe<MenuNavigationBlockOutput>;
   PageSeoSettings?: Maybe<PageSeoSettingsOutput>;
   ParagraphComponent?: Maybe<ParagraphComponentOutput>;
-  StandardPage?: Maybe<StandardPageOutput>;
-  StartPage?: Maybe<StartPageOutput>;
   SysContentFolder?: Maybe<SysContentFolderOutput>;
-  TextBlock?: Maybe<TextBlockOutput>;
-  Video?: Maybe<VideoOutput>;
   VideoComponent?: Maybe<VideoComponentOutput>;
   VideoMedia?: Maybe<VideoMediaOutput>;
   _Component?: Maybe<_ComponentOutput>;
@@ -2971,17 +2663,6 @@ export type QueryCardComponentArgs = {
   orderBy?: InputMaybe<CardComponentOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<CardComponentWhereInput>;
-};
-
-
-export type QueryCarouselBlockArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<CarouselBlockOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<CarouselBlockWhereInput>;
 };
 
 
@@ -3095,39 +2776,6 @@ export type QueryLandingPageArgs = {
 };
 
 
-export type QueryLayoutContainerBlockArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<LayoutContainerBlockOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<LayoutContainerBlockWhereInput>;
-};
-
-
-export type QueryMegaMenuGroupBlockArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<MegaMenuGroupBlockOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<MegaMenuGroupBlockWhereInput>;
-};
-
-
-export type QueryMenuNavigationBlockArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<MenuNavigationBlockOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<MenuNavigationBlockWhereInput>;
-};
-
-
 export type QueryPageSeoSettingsArgs = {
   cursor?: InputMaybe<Scalars['String']['input']>;
   ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -3150,28 +2798,6 @@ export type QueryParagraphComponentArgs = {
 };
 
 
-export type QueryStandardPageArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<StandardPageOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<StandardPageWhereInput>;
-};
-
-
-export type QueryStartPageArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<StartPageOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<StartPageWhereInput>;
-};
-
-
 export type QuerySysContentFolderArgs = {
   cursor?: InputMaybe<Scalars['String']['input']>;
   ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -3180,28 +2806,6 @@ export type QuerySysContentFolderArgs = {
   orderBy?: InputMaybe<SysContentFolderOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<SysContentFolderWhereInput>;
-};
-
-
-export type QueryTextBlockArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<TextBlockOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<TextBlockWhereInput>;
-};
-
-
-export type QueryVideoArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<VideoOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<VideoWhereInput>;
 };
 
 
@@ -3334,7 +2938,6 @@ export type QueryRef = {
   BlogPostPage?: Maybe<BlogPostPageOutput>;
   CTAComponent?: Maybe<CtaComponentOutput>;
   CardComponent?: Maybe<CardComponentOutput>;
-  CarouselBlock?: Maybe<CarouselBlockOutput>;
   ContactComponent?: Maybe<ContactComponentOutput>;
   ContactPage?: Maybe<ContactPageOutput>;
   Data?: Maybe<DataOutput>;
@@ -3345,16 +2948,9 @@ export type QueryRef = {
   ImageComponent?: Maybe<ImageComponentOutput>;
   ImageMedia?: Maybe<ImageMediaOutput>;
   LandingPage?: Maybe<LandingPageOutput>;
-  LayoutContainerBlock?: Maybe<LayoutContainerBlockOutput>;
-  MegaMenuGroupBlock?: Maybe<MegaMenuGroupBlockOutput>;
-  MenuNavigationBlock?: Maybe<MenuNavigationBlockOutput>;
   PageSeoSettings?: Maybe<PageSeoSettingsOutput>;
   ParagraphComponent?: Maybe<ParagraphComponentOutput>;
-  StandardPage?: Maybe<StandardPageOutput>;
-  StartPage?: Maybe<StartPageOutput>;
   SysContentFolder?: Maybe<SysContentFolderOutput>;
-  TextBlock?: Maybe<TextBlockOutput>;
-  Video?: Maybe<VideoOutput>;
   VideoComponent?: Maybe<VideoComponentOutput>;
   VideoMedia?: Maybe<VideoMediaOutput>;
   _Component?: Maybe<_ComponentOutput>;
@@ -3443,17 +3039,6 @@ export type QueryRefCardComponentArgs = {
   orderBy?: InputMaybe<CardComponentOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<CardComponentWhereInput>;
-};
-
-
-export type QueryRefCarouselBlockArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<CarouselBlockOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<CarouselBlockWhereInput>;
 };
 
 
@@ -3567,39 +3152,6 @@ export type QueryRefLandingPageArgs = {
 };
 
 
-export type QueryRefLayoutContainerBlockArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<LayoutContainerBlockOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<LayoutContainerBlockWhereInput>;
-};
-
-
-export type QueryRefMegaMenuGroupBlockArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<MegaMenuGroupBlockOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<MegaMenuGroupBlockWhereInput>;
-};
-
-
-export type QueryRefMenuNavigationBlockArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<MenuNavigationBlockOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<MenuNavigationBlockWhereInput>;
-};
-
-
 export type QueryRefPageSeoSettingsArgs = {
   cursor?: InputMaybe<Scalars['String']['input']>;
   ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -3622,28 +3174,6 @@ export type QueryRefParagraphComponentArgs = {
 };
 
 
-export type QueryRefStandardPageArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<StandardPageOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<StandardPageWhereInput>;
-};
-
-
-export type QueryRefStartPageArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<StartPageOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<StartPageWhereInput>;
-};
-
-
 export type QueryRefSysContentFolderArgs = {
   cursor?: InputMaybe<Scalars['String']['input']>;
   ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -3652,28 +3182,6 @@ export type QueryRefSysContentFolderArgs = {
   orderBy?: InputMaybe<SysContentFolderOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<SysContentFolderWhereInput>;
-};
-
-
-export type QueryRefTextBlockArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<TextBlockOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<TextBlockWhereInput>;
-};
-
-
-export type QueryRefVideoArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<VideoOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<VideoWhereInput>;
 };
 
 
@@ -3869,196 +3377,6 @@ export type SearchableStringFilterInput = {
   synonyms?: InputMaybe<Array<InputMaybe<SynonymSlot>>>;
 };
 
-export type StandardPage = IData & _IContent & _IPage & {
-  __typename?: 'StandardPage';
-  MainBody?: Maybe<RichText>;
-  SeoSettings?: Maybe<PageSeoSettingsProperty>;
-  StandardPageHeading?: Maybe<Scalars['String']['output']>;
-  StandardPromoImage?: Maybe<ContentReference>;
-  StandardSubHeading?: Maybe<Scalars['String']['output']>;
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type StandardPage_FulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type StandardPage_LinkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type StandardPageAutocomplete = {
-  __typename?: 'StandardPageAutocomplete';
-  MainBody?: Maybe<RichTextAutocomplete>;
-  SeoSettings?: Maybe<PageSeoSettingsPropertyAutocomplete>;
-  StandardPromoImage?: Maybe<ContentReferenceAutocomplete>;
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type StandardPageFacet = {
-  __typename?: 'StandardPageFacet';
-  MainBody?: Maybe<RichTextFacet>;
-  SeoSettings?: Maybe<PageSeoSettingsPropertyFacet>;
-  StandardPromoImage?: Maybe<ContentReferenceFacet>;
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-export type StandardPageOrderByInput = {
-  MainBody?: InputMaybe<RichTextOrderByInput>;
-  SeoSettings?: InputMaybe<PageSeoSettingsPropertyOrderByInput>;
-  StandardPromoImage?: InputMaybe<ContentReferenceOrderByInput>;
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type StandardPageOutput = {
-  __typename?: 'StandardPageOutput';
-  autocomplete?: Maybe<StandardPageAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<StandardPageFacet>;
-  item?: Maybe<StandardPage>;
-  items?: Maybe<Array<Maybe<StandardPage>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type StandardPageOutputTotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type StandardPageWhereInput = {
-  MainBody?: InputMaybe<RichTextWhereInput>;
-  SeoSettings?: InputMaybe<PageSeoSettingsPropertyWhereInput>;
-  StandardPromoImage?: InputMaybe<ContentReferenceWhereInput>;
-  _and?: InputMaybe<Array<InputMaybe<StandardPageWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<StandardPageWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<StandardPageWhereInput>>>;
-};
-
-export type StartPage = IData & _IContent & _IPage & {
-  __typename?: 'StartPage';
-  FooterNavigationContentArea?: Maybe<Array<Maybe<_IContent>>>;
-  FooterNavigationCopyrightText?: Maybe<Scalars['String']['output']>;
-  FooterNavigationSubLinks?: Maybe<Array<Maybe<Link>>>;
-  HomePageHeroContentArea?: Maybe<Array<Maybe<_IContent>>>;
-  HomePageMainContentArea?: Maybe<Array<Maybe<_IContent>>>;
-  MainNavigationContentArea?: Maybe<Array<Maybe<_IContent>>>;
-  SeoSettings?: Maybe<PageSeoSettingsProperty>;
-  SiteImageLogo?: Maybe<ContentReference>;
-  UtilityNavigationContentArea?: Maybe<Array<Maybe<_IContent>>>;
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type StartPage_FulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type StartPage_LinkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type StartPageAutocomplete = {
-  __typename?: 'StartPageAutocomplete';
-  FooterNavigationContentArea?: Maybe<_IContentAutocomplete>;
-  FooterNavigationSubLinks?: Maybe<LinkAutocomplete>;
-  HomePageHeroContentArea?: Maybe<_IContentAutocomplete>;
-  HomePageMainContentArea?: Maybe<_IContentAutocomplete>;
-  MainNavigationContentArea?: Maybe<_IContentAutocomplete>;
-  SeoSettings?: Maybe<PageSeoSettingsPropertyAutocomplete>;
-  SiteImageLogo?: Maybe<ContentReferenceAutocomplete>;
-  UtilityNavigationContentArea?: Maybe<_IContentAutocomplete>;
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type StartPageFacet = {
-  __typename?: 'StartPageFacet';
-  FooterNavigationContentArea?: Maybe<_IContentFacet>;
-  FooterNavigationSubLinks?: Maybe<LinkFacet>;
-  HomePageHeroContentArea?: Maybe<_IContentFacet>;
-  HomePageMainContentArea?: Maybe<_IContentFacet>;
-  MainNavigationContentArea?: Maybe<_IContentFacet>;
-  SeoSettings?: Maybe<PageSeoSettingsPropertyFacet>;
-  SiteImageLogo?: Maybe<ContentReferenceFacet>;
-  UtilityNavigationContentArea?: Maybe<_IContentFacet>;
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-export type StartPageOrderByInput = {
-  FooterNavigationContentArea?: InputMaybe<_IContentOrderByInput>;
-  FooterNavigationSubLinks?: InputMaybe<LinkOrderByInput>;
-  HomePageHeroContentArea?: InputMaybe<_IContentOrderByInput>;
-  HomePageMainContentArea?: InputMaybe<_IContentOrderByInput>;
-  MainNavigationContentArea?: InputMaybe<_IContentOrderByInput>;
-  SeoSettings?: InputMaybe<PageSeoSettingsPropertyOrderByInput>;
-  SiteImageLogo?: InputMaybe<ContentReferenceOrderByInput>;
-  UtilityNavigationContentArea?: InputMaybe<_IContentOrderByInput>;
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type StartPageOutput = {
-  __typename?: 'StartPageOutput';
-  autocomplete?: Maybe<StartPageAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<StartPageFacet>;
-  item?: Maybe<StartPage>;
-  items?: Maybe<Array<Maybe<StartPage>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type StartPageOutputTotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type StartPageWhereInput = {
-  FooterNavigationContentArea?: InputMaybe<_IContentWhereInput>;
-  FooterNavigationSubLinks?: InputMaybe<LinkWhereInput>;
-  HomePageHeroContentArea?: InputMaybe<_IContentWhereInput>;
-  HomePageMainContentArea?: InputMaybe<_IContentWhereInput>;
-  MainNavigationContentArea?: InputMaybe<_IContentWhereInput>;
-  SeoSettings?: InputMaybe<PageSeoSettingsPropertyWhereInput>;
-  SiteImageLogo?: InputMaybe<ContentReferenceWhereInput>;
-  UtilityNavigationContentArea?: InputMaybe<_IContentWhereInput>;
-  _and?: InputMaybe<Array<InputMaybe<StartPageWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<StartPageWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<StartPageWhereInput>>>;
-};
-
 export type StringFacet = {
   __typename?: 'StringFacet';
   count?: Maybe<Scalars['Int']['output']>;
@@ -4163,111 +3481,6 @@ export type SysContentFolderWhereInput = {
   _or?: InputMaybe<Array<InputMaybe<SysContentFolderWhereInput>>>;
 };
 
-export type TextBlock = IData & _IComponent & _IContent & {
-  __typename?: 'TextBlock';
-  TextBlockDescription?: Maybe<RichText>;
-  TextBlockHeading?: Maybe<Scalars['String']['output']>;
-  TextBlockHeadingSize?: Maybe<Scalars['String']['output']>;
-  TextBlockOverline?: Maybe<Scalars['String']['output']>;
-  TextBlockWidth?: Maybe<Scalars['String']['output']>;
-  TextCenter?: Maybe<Scalars['Boolean']['output']>;
-  TextClassName?: Maybe<Scalars['String']['output']>;
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type TextBlock_FulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type TextBlock_LinkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type TextBlockAutocomplete = {
-  __typename?: 'TextBlockAutocomplete';
-  TextBlockDescription?: Maybe<RichTextAutocomplete>;
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type TextBlockFacet = {
-  __typename?: 'TextBlockFacet';
-  TextBlockDescription?: Maybe<RichTextFacet>;
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-export type TextBlockOrderByInput = {
-  TextBlockDescription?: InputMaybe<RichTextOrderByInput>;
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type TextBlockOutput = {
-  __typename?: 'TextBlockOutput';
-  autocomplete?: Maybe<TextBlockAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<TextBlockFacet>;
-  item?: Maybe<TextBlock>;
-  items?: Maybe<Array<Maybe<TextBlock>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type TextBlockOutputTotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type TextBlockWhereInput = {
-  TextBlockDescription?: InputMaybe<RichTextWhereInput>;
-  _and?: InputMaybe<Array<InputMaybe<TextBlockWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<TextBlockWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<TextBlockWhereInput>>>;
-};
-
-export type Video = IData & _IContent & _IMedia & _IVideo & {
-  __typename?: 'Video';
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type Video_FulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type Video_LinkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type VideoAutocomplete = {
-  __typename?: 'VideoAutocomplete';
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
 export type VideoComponent = IData & _IComponent & _IContent & {
   __typename?: 'VideoComponent';
   /** @deprecated Use `_link` field instead */
@@ -4345,11 +3558,6 @@ export type VideoComponentWhereInput = {
   video?: InputMaybe<ContentReferenceWhereInput>;
 };
 
-export type VideoFacet = {
-  __typename?: 'VideoFacet';
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
 export type VideoMedia = IData & _IContent & _IMedia & _IVideo & {
   __typename?: 'VideoMedia';
   /** @deprecated Use `_link` field instead */
@@ -4414,39 +3622,6 @@ export type VideoMediaWhereInput = {
   _modified?: InputMaybe<DateFilterInput>;
   _not?: InputMaybe<Array<InputMaybe<VideoMediaWhereInput>>>;
   _or?: InputMaybe<Array<InputMaybe<VideoMediaWhereInput>>>;
-};
-
-export type VideoOrderByInput = {
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type VideoOutput = {
-  __typename?: 'VideoOutput';
-  autocomplete?: Maybe<VideoAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<VideoFacet>;
-  item?: Maybe<Video>;
-  items?: Maybe<Array<Maybe<Video>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type VideoOutputTotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type VideoWhereInput = {
-  _and?: InputMaybe<Array<InputMaybe<VideoWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<VideoWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<VideoWhereInput>>>;
 };
 
 export type _Component = IData & _IComponent & _IContent & {
@@ -5286,6 +4461,21 @@ export enum System_Locales {
   Neutral = 'NEUTRAL'
 }
 
+export type BlogListingBlockFragment = { __typename?: 'BlogListingBlock', BlogListingItemCount?: number | null, BlogListingShowFilters?: boolean | null };
+
+export type BlogPostPageFragment = { __typename?: 'BlogPostPage', Heading?: string | null, ArticleSubHeading?: string | null, ArticleAuthor?: string | null, _metadata?: { __typename?: 'ContentMetadata', url?: { __typename?: 'ContentUrl', default?: string | null } | null } | { __typename?: 'InstanceMetadata', url?: { __typename?: 'ContentUrl', default?: string | null } | null } | { __typename?: 'ItemMetadata', url?: { __typename?: 'ContentUrl', default?: string | null } | null } | { __typename?: 'MediaMetadata', url?: { __typename?: 'ContentUrl', default?: string | null } | null } | null, BlogPostPromoImage?: { __typename?: 'ContentReference', url?: { __typename?: 'ContentUrl', default?: string | null } | null } | null, BlogPostBody?: { __typename?: 'RichText', html?: string | null } | null, SeoSettings?: (
+    { __typename?: 'PageSeoSettingsProperty' }
+    & PageSeoSettingsPropertyFragment
+  ) | null };
+
+export type LandingPageFragment = { __typename?: 'LandingPage', MainContentArea?: Array<{ __typename?: 'ArticleListComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankSection', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
+    { __typename?: 'BlogListingBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
+    & BlogListingBlockFragment
+  ) | { __typename?: 'BlogPostPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CTAComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CardComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ContactComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ContactPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'EventComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'GenericMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeadingComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeroComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'LandingPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ParagraphComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'SysContentFolder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Component', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Content', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Experience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Folder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Image', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Media', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Page', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Section', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Video', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | null> | null, SeoSettings?: (
+    { __typename?: 'PageSeoSettingsProperty' }
+    & PageSeoSettingsPropertyFragment
+  ) | null };
+
 export type ArticleListComponentFragment = { __typename?: 'ArticleListComponent', articleListCount?: number | null };
 
 export type CtaComponentFragment = { __typename?: 'CTAComponent', Text?: string | null, Link?: { __typename?: 'ContentUrl', default?: string | null } | null };
@@ -5306,22 +4496,7 @@ export type ParagraphComponentFragment = { __typename?: 'ParagraphComponent', te
 
 export type VideoComponentFragment = { __typename?: 'VideoComponent', title?: string | null, placeholder?: { __typename?: 'ContentReference', url?: { __typename?: 'ContentUrl', default?: string | null } | null } | null, video?: { __typename?: 'ContentReference', url?: { __typename?: 'ContentUrl', default?: string | null } | null } | null };
 
-export type BlogListingBlockFragment = { __typename?: 'BlogListingBlock', BlogListingItemCount?: number | null, BlogListingShowFilters?: boolean | null };
-
 export type BlankExperienceSeoFragment = { __typename?: 'BlankExperience', BlankExperienceSeoSettings?: { __typename?: 'PageSeoSettingsProperty', MetaTitle?: string | null, MetaDescription?: string | null } | null };
-
-export type BlogPostPageFragment = { __typename?: 'BlogPostPage', Heading?: string | null, ArticleSubHeading?: string | null, ArticleAuthor?: string | null, _metadata?: { __typename?: 'ContentMetadata', url?: { __typename?: 'ContentUrl', default?: string | null } | null } | { __typename?: 'InstanceMetadata', url?: { __typename?: 'ContentUrl', default?: string | null } | null } | { __typename?: 'ItemMetadata', url?: { __typename?: 'ContentUrl', default?: string | null } | null } | { __typename?: 'MediaMetadata', url?: { __typename?: 'ContentUrl', default?: string | null } | null } | null, BlogPostPromoImage?: { __typename?: 'ContentReference', url?: { __typename?: 'ContentUrl', default?: string | null } | null } | null, BlogPostBody?: { __typename?: 'RichText', html?: string | null } | null, SeoSettings?: (
-    { __typename?: 'PageSeoSettingsProperty' }
-    & PageSeoSettingsPropertyFragment
-  ) | null };
-
-export type LandingPageFragment = { __typename?: 'LandingPage', MainContentArea?: Array<{ __typename?: 'ArticleListComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankSection', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
-    { __typename?: 'BlogListingBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
-    & BlogListingBlockFragment
-  ) | { __typename?: 'BlogPostPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CTAComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CardComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CarouselBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ContactComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ContactPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'EventComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'GenericMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeadingComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeroComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'LandingPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'LayoutContainerBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MegaMenuGroupBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MenuNavigationBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ParagraphComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'StandardPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'StartPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'SysContentFolder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TextBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'Video', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Component', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Content', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Experience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Folder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Image', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Media', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Page', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Section', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Video', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | null> | null, SeoSettings?: (
-    { __typename?: 'PageSeoSettingsProperty' }
-    & PageSeoSettingsPropertyFragment
-  ) | null };
 
 export type DisplaySettingsFragment = { __typename?: 'CompositionDisplaySetting', key?: string | null, value?: string | null };
 
@@ -5334,14 +4509,14 @@ export type ContentByIdQueryVariables = Exact<{
 }>;
 
 
-export type ContentByIdQuery = { __typename?: 'Query', _Content?: { __typename?: '_ContentOutput', items?: Array<{ __typename?: 'ArticleListComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankSection', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlogListingBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlogPostPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CTAComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CardComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CarouselBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ContactComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ContactPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'EventComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'GenericMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeadingComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeroComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'LandingPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'LayoutContainerBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MegaMenuGroupBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MenuNavigationBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ParagraphComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'StandardPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'StartPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'SysContentFolder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TextBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'Video', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Component', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Content', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Experience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Folder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Image', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Media', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Page', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Section', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Video', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | null> | null } | null };
+export type ContentByIdQuery = { __typename?: 'Query', _Content?: { __typename?: '_ContentOutput', items?: Array<{ __typename?: 'ArticleListComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankSection', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlogListingBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlogPostPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CTAComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CardComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ContactComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ContactPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'EventComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'GenericMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeadingComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeroComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'LandingPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ParagraphComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'SysContentFolder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Component', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Content', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Experience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Folder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Image', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Media', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Page', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Section', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Video', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | null> | null } | null };
 
 export type ContentByPathQueryVariables = Exact<{
   url: Scalars['String']['input'];
 }>;
 
 
-export type ContentByPathQuery = { __typename?: 'Query', _Content?: { __typename?: '_ContentOutput', items?: Array<{ __typename?: 'ArticleListComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'BlankExperience', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'BlankSection', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'BlogListingBlock', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'BlogPostPage', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'CTAComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'CardComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'CarouselBlock', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'ContactComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'ContactPage', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'EventComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'GenericMedia', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'HeadingComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'HeroComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'ImageComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'ImageMedia', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'LandingPage', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'LayoutContainerBlock', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'MegaMenuGroupBlock', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'MenuNavigationBlock', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'ParagraphComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'StandardPage', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'StartPage', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'SysContentFolder', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'TextBlock', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'Video', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'VideoComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'VideoMedia', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Component', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Content', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Experience', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Folder', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Image', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Media', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Page', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Section', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Video', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | null> | null } | null };
+export type ContentByPathQuery = { __typename?: 'Query', _Content?: { __typename?: '_ContentOutput', items?: Array<{ __typename?: 'ArticleListComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'BlankExperience', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'BlankSection', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'BlogListingBlock', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'BlogPostPage', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'CTAComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'CardComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'ContactComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'ContactPage', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'EventComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'GenericMedia', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'HeadingComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'HeroComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'ImageComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'ImageMedia', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'LandingPage', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'ParagraphComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'SysContentFolder', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'VideoComponent', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: 'VideoMedia', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Component', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Content', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Experience', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Folder', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Image', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Media', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Page', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Section', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | { __typename?: '_Video', _metadata?: { __typename?: 'ContentMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, version?: string | null, locale?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, version?: string | null, locale?: string | null } | null } | null> | null } | null };
 
 export type GetExperienceQueryVariables = Exact<{
   key?: InputMaybe<Scalars['String']['input']>;
@@ -5364,7 +4539,7 @@ export type GetExperienceQuery = { __typename?: 'Query', _Experience?: { __typen
           ) | (
             { __typename?: 'CardComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
             & CardComponentFragment
-          ) | { __typename?: 'CarouselBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
+          ) | (
             { __typename?: 'ContactComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
             & ContactComponentFragment
           ) | (
@@ -5379,10 +4554,10 @@ export type GetExperienceQuery = { __typename?: 'Query', _Experience?: { __typen
           ) | (
             { __typename?: 'ImageComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
             & ImageComponentFragment
-          ) | { __typename?: 'LayoutContainerBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MegaMenuGroupBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MenuNavigationBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
+          ) | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
             { __typename?: 'ParagraphComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
             & ParagraphComponentFragment
-          ) | { __typename?: 'TextBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
+          ) | (
             { __typename?: 'VideoComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
             & VideoComponentFragment
           ) | { __typename?: '_Component', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Section', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | null } | { __typename?: 'CompositionNode', key?: string | null, displayName?: string | null, displayTemplateKey?: string | null, displaySettings?: Array<(
@@ -5406,7 +4581,7 @@ export type GetExperienceQuery = { __typename?: 'Query', _Experience?: { __typen
                 ) | (
                   { __typename?: 'CardComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
                   & CardComponentFragment
-                ) | { __typename?: 'CarouselBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
+                ) | (
                   { __typename?: 'ContactComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
                   & ContactComponentFragment
                 ) | (
@@ -5421,10 +4596,10 @@ export type GetExperienceQuery = { __typename?: 'Query', _Experience?: { __typen
                 ) | (
                   { __typename?: 'ImageComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
                   & ImageComponentFragment
-                ) | { __typename?: 'LayoutContainerBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MegaMenuGroupBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MenuNavigationBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
+                ) | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
                   { __typename?: 'ParagraphComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
                   & ParagraphComponentFragment
-                ) | { __typename?: 'TextBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
+                ) | (
                   { __typename?: 'VideoComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
                   & VideoComponentFragment
                 ) | { __typename?: '_Component', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Section', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | null } | { __typename?: 'CompositionNode' } | { __typename?: 'CompositionStructureNode' } | null> | null } | null> | null } | null> | null, displaySettings?: Array<(
@@ -5445,7 +4620,7 @@ export type GetExperienceQuery = { __typename?: 'Query', _Experience?: { __typen
           ) | (
             { __typename?: 'CardComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
             & CardComponentFragment
-          ) | { __typename?: 'CarouselBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
+          ) | (
             { __typename?: 'ContactComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
             & ContactComponentFragment
           ) | (
@@ -5460,10 +4635,10 @@ export type GetExperienceQuery = { __typename?: 'Query', _Experience?: { __typen
           ) | (
             { __typename?: 'ImageComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
             & ImageComponentFragment
-          ) | { __typename?: 'LayoutContainerBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MegaMenuGroupBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MenuNavigationBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
+          ) | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
             { __typename?: 'ParagraphComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
             & ParagraphComponentFragment
-          ) | { __typename?: 'TextBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
+          ) | (
             { __typename?: 'VideoComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
             & VideoComponentFragment
           ) | { __typename?: '_Component', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Section', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | null } | { __typename?: 'CompositionNode', key?: string | null, displayName?: string | null, displayTemplateKey?: string | null, displaySettings?: Array<(
@@ -5487,7 +4662,7 @@ export type GetExperienceQuery = { __typename?: 'Query', _Experience?: { __typen
                 ) | (
                   { __typename?: 'CardComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
                   & CardComponentFragment
-                ) | { __typename?: 'CarouselBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
+                ) | (
                   { __typename?: 'ContactComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
                   & ContactComponentFragment
                 ) | (
@@ -5502,10 +4677,10 @@ export type GetExperienceQuery = { __typename?: 'Query', _Experience?: { __typen
                 ) | (
                   { __typename?: 'ImageComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
                   & ImageComponentFragment
-                ) | { __typename?: 'LayoutContainerBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MegaMenuGroupBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MenuNavigationBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
+                ) | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
                   { __typename?: 'ParagraphComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
                   & ParagraphComponentFragment
-                ) | { __typename?: 'TextBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | (
+                ) | (
                   { __typename?: 'VideoComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null }
                   & VideoComponentFragment
                 ) | { __typename?: '_Component', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Section', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | null } | { __typename?: 'CompositionNode' } | { __typename?: 'CompositionStructureNode' } | null> | null } | null> | null } | null> | null, displaySettings?: Array<(
@@ -5538,7 +4713,7 @@ export type PageByIdQuery = { __typename?: 'Query', _Page?: { __typename?: '_Pag
     ) | { __typename?: 'ContactPage' } | (
       { __typename?: 'LandingPage' }
       & LandingPageFragment
-    ) | { __typename?: 'StandardPage' } | { __typename?: 'StartPage' } | { __typename?: '_Experience' } | { __typename?: '_Page' } | null> | null } | null };
+    ) | { __typename?: '_Experience' } | { __typename?: '_Page' } | null> | null } | null };
 
 export type GetBlogPostsQueryVariables = Exact<{
   loc?: InputMaybe<Array<InputMaybe<Locales>> | InputMaybe<Locales>>;
@@ -5549,6 +4724,60 @@ export type GetBlogPostsQueryVariables = Exact<{
 
 export type GetBlogPostsQuery = { __typename?: 'Query', BlogPostPage?: { __typename?: 'BlogPostPageOutput', items?: Array<{ __typename?: 'BlogPostPage', Heading?: string | null, ArticleSubHeading?: string | null, BlogPostPromoImage?: { __typename?: 'ContentReference', url?: { __typename?: 'ContentUrl', default?: string | null } | null } | null, _metadata?: { __typename?: 'ContentMetadata', url?: { __typename?: 'ContentUrl', default?: string | null } | null } | { __typename?: 'InstanceMetadata', url?: { __typename?: 'ContentUrl', default?: string | null } | null } | { __typename?: 'ItemMetadata', url?: { __typename?: 'ContentUrl', default?: string | null } | null } | { __typename?: 'MediaMetadata', url?: { __typename?: 'ContentUrl', default?: string | null } | null } | null } | null> | null } | null };
 
+export const PageSeoSettingsPropertyFragmentDoc = gql`
+    fragment PageSeoSettingsProperty on PageSeoSettingsProperty {
+  MetaTitle
+  MetaDescription
+  SharingImage {
+    url {
+      default
+    }
+  }
+  GraphType
+}
+    `;
+export const BlogPostPageFragmentDoc = gql`
+    fragment BlogPostPage on BlogPostPage {
+  _metadata {
+    url {
+      default
+    }
+  }
+  Heading
+  ArticleSubHeading
+  ArticleAuthor
+  BlogPostPromoImage {
+    url {
+      default
+    }
+  }
+  BlogPostBody {
+    html
+  }
+  SeoSettings {
+    ...PageSeoSettingsProperty
+  }
+}
+    `;
+export const BlogListingBlockFragmentDoc = gql`
+    fragment BlogListingBlock on BlogListingBlock {
+  BlogListingItemCount
+  BlogListingShowFilters
+}
+    `;
+export const LandingPageFragmentDoc = gql`
+    fragment LandingPage on LandingPage {
+  MainContentArea {
+    _metadata {
+      types
+    }
+    ...BlogListingBlock
+  }
+  SeoSettings {
+    ...PageSeoSettingsProperty
+  }
+}
+    `;
 export const ArticleListComponentFragmentDoc = gql`
     fragment ArticleListComponent on ArticleListComponent {
   articleListCount
@@ -5663,60 +4892,6 @@ export const BlankExperienceSeoFragmentDoc = gql`
   BlankExperienceSeoSettings {
     MetaTitle
     MetaDescription
-  }
-}
-    `;
-export const PageSeoSettingsPropertyFragmentDoc = gql`
-    fragment PageSeoSettingsProperty on PageSeoSettingsProperty {
-  MetaTitle
-  MetaDescription
-  SharingImage {
-    url {
-      default
-    }
-  }
-  GraphType
-}
-    `;
-export const BlogPostPageFragmentDoc = gql`
-    fragment BlogPostPage on BlogPostPage {
-  _metadata {
-    url {
-      default
-    }
-  }
-  Heading
-  ArticleSubHeading
-  ArticleAuthor
-  BlogPostPromoImage {
-    url {
-      default
-    }
-  }
-  BlogPostBody {
-    html
-  }
-  SeoSettings {
-    ...PageSeoSettingsProperty
-  }
-}
-    `;
-export const BlogListingBlockFragmentDoc = gql`
-    fragment BlogListingBlock on BlogListingBlock {
-  BlogListingItemCount
-  BlogListingShowFilters
-}
-    `;
-export const LandingPageFragmentDoc = gql`
-    fragment LandingPage on LandingPage {
-  MainContentArea {
-    _metadata {
-      types
-    }
-    ...BlogListingBlock
-  }
-  SeoSettings {
-    ...PageSeoSettingsProperty
   }
 }
     `;

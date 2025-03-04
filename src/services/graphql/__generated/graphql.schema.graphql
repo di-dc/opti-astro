@@ -410,60 +410,6 @@ input CardComponentWhereInput {
   _or: [CardComponentWhereInput]
 }
 
-type CarouselBlock implements IData & _IComponent & _IContent {
-  CarouselItemsContentArea: [_IContent]
-  _children: QueryRef @deprecated(reason: "Use `_link` field instead")
-  _deleted: Bool
-  _fulltext(highlight: HighlightOptions): [String]
-  _id: String
-  _link(type: LinkTypes): QueryRef
-  _metadata: IContentMetadata
-  _modified: Date
-  _score: Float
-}
-
-type CarouselBlockAutocomplete {
-  CarouselItemsContentArea: _IContentAutocomplete
-  _metadata: IContentMetadataAutocomplete
-}
-
-type CarouselBlockFacet {
-  CarouselItemsContentArea: _IContentFacet
-  _metadata: IContentMetadataFacet
-}
-
-input CarouselBlockOrderByInput {
-  CarouselItemsContentArea: _IContentOrderByInput
-  _metadata: IContentMetadataOrderByInput
-  _minimumScore: Float
-  _modified: OrderBy
-  _ranking: Ranking
-
-  """
-  The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled.
-  """
-  _semanticWeight: Float
-}
-
-type CarouselBlockOutput {
-  autocomplete: CarouselBlockAutocomplete
-  cursor: String
-  facets: CarouselBlockFacet
-  item: CarouselBlock
-  items: [CarouselBlock]
-  total(all: Boolean): Int
-}
-
-input CarouselBlockWhereInput {
-  CarouselItemsContentArea: _IContentWhereInput
-  _and: [CarouselBlockWhereInput]
-  _fulltext: SearchableStringFilterInput
-  _metadata: IContentMetadataWhereInput
-  _modified: DateFilterInput
-  _not: [CarouselBlockWhereInput]
-  _or: [CarouselBlockWhereInput]
-}
-
 type CompositionComponentNode implements ICompositionComponentNode & ICompositionNode {
   component: _IComponent
   displayName: String
@@ -1526,72 +1472,6 @@ input LandingPageWhereInput {
   _or: [LandingPageWhereInput]
 }
 
-type LayoutContainerBlock implements IData & _IComponent & _IContent {
-  ColumnsCount: Int
-  ContainerBackgroundColor: String
-  ContainerBackgroundImage: ContentReference
-  ContainerMarginBottom: String
-  ContainerMarginTop: String
-  ContainerPaddingBottom: String
-  ContainerPaddingTop: String
-  GapSize: String
-  LayoutContentArea: [_IContent]
-  _children: QueryRef @deprecated(reason: "Use `_link` field instead")
-  _deleted: Bool
-  _fulltext(highlight: HighlightOptions): [String]
-  _id: String
-  _link(type: LinkTypes): QueryRef
-  _metadata: IContentMetadata
-  _modified: Date
-  _score: Float
-}
-
-type LayoutContainerBlockAutocomplete {
-  ContainerBackgroundImage: ContentReferenceAutocomplete
-  LayoutContentArea: _IContentAutocomplete
-  _metadata: IContentMetadataAutocomplete
-}
-
-type LayoutContainerBlockFacet {
-  ContainerBackgroundImage: ContentReferenceFacet
-  LayoutContentArea: _IContentFacet
-  _metadata: IContentMetadataFacet
-}
-
-input LayoutContainerBlockOrderByInput {
-  ContainerBackgroundImage: ContentReferenceOrderByInput
-  LayoutContentArea: _IContentOrderByInput
-  _metadata: IContentMetadataOrderByInput
-  _minimumScore: Float
-  _modified: OrderBy
-  _ranking: Ranking
-
-  """
-  The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled.
-  """
-  _semanticWeight: Float
-}
-
-type LayoutContainerBlockOutput {
-  autocomplete: LayoutContainerBlockAutocomplete
-  cursor: String
-  facets: LayoutContainerBlockFacet
-  item: LayoutContainerBlock
-  items: [LayoutContainerBlock]
-  total(all: Boolean): Int
-}
-
-input LayoutContainerBlockWhereInput {
-  ContainerBackgroundImage: ContentReferenceWhereInput
-  LayoutContentArea: _IContentWhereInput
-  _and: [LayoutContainerBlockWhereInput]
-  _fulltext: SearchableStringFilterInput
-  _metadata: IContentMetadataWhereInput
-  _modified: DateFilterInput
-  _not: [LayoutContainerBlockWhereInput]
-  _or: [LayoutContainerBlockWhereInput]
-}
-
 type Link {
   target: String
   text(highlight: HighlightOptions): String
@@ -1649,6 +1529,9 @@ enum Locales {
   ALL
   NEUTRAL
   en
+  es
+  fr
+  fr_CA
 }
 
 type MediaMetadata implements IContentMetadata & IInstanceMetadata & IMediaMetadata {
@@ -1675,121 +1558,6 @@ type MediaMetadata implements IContentMetadata & IInstanceMetadata & IMediaMetad
   types: [String]
   url: ContentUrl
   version: String
-}
-
-type MegaMenuGroupBlock implements IData & _IComponent & _IContent {
-  MegaMenuContentArea: [_IContent]
-  MegaMenuUrl: ContentUrl
-  MenuMenuHeading: String
-  _children: QueryRef @deprecated(reason: "Use `_link` field instead")
-  _deleted: Bool
-  _fulltext(highlight: HighlightOptions): [String]
-  _id: String
-  _link(type: LinkTypes): QueryRef
-  _metadata: IContentMetadata
-  _modified: Date
-  _score: Float
-}
-
-type MegaMenuGroupBlockAutocomplete {
-  MegaMenuContentArea: _IContentAutocomplete
-  MegaMenuUrl: ContentUrlAutocomplete
-  _metadata: IContentMetadataAutocomplete
-}
-
-type MegaMenuGroupBlockFacet {
-  MegaMenuContentArea: _IContentFacet
-  MegaMenuUrl: ContentUrlFacet
-  _metadata: IContentMetadataFacet
-}
-
-input MegaMenuGroupBlockOrderByInput {
-  MegaMenuContentArea: _IContentOrderByInput
-  MegaMenuUrl: ContentUrlOrderByInput
-  _metadata: IContentMetadataOrderByInput
-  _minimumScore: Float
-  _modified: OrderBy
-  _ranking: Ranking
-
-  """
-  The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled.
-  """
-  _semanticWeight: Float
-}
-
-type MegaMenuGroupBlockOutput {
-  autocomplete: MegaMenuGroupBlockAutocomplete
-  cursor: String
-  facets: MegaMenuGroupBlockFacet
-  item: MegaMenuGroupBlock
-  items: [MegaMenuGroupBlock]
-  total(all: Boolean): Int
-}
-
-input MegaMenuGroupBlockWhereInput {
-  MegaMenuContentArea: _IContentWhereInput
-  MegaMenuUrl: ContentUrlWhereInput
-  _and: [MegaMenuGroupBlockWhereInput]
-  _fulltext: SearchableStringFilterInput
-  _metadata: IContentMetadataWhereInput
-  _modified: DateFilterInput
-  _not: [MegaMenuGroupBlockWhereInput]
-  _or: [MegaMenuGroupBlockWhereInput]
-}
-
-type MenuNavigationBlock implements IData & _IComponent & _IContent {
-  MenuNavigationHeading: String
-  NavigationLinks: [Link]
-  _children: QueryRef @deprecated(reason: "Use `_link` field instead")
-  _deleted: Bool
-  _fulltext(highlight: HighlightOptions): [String]
-  _id: String
-  _link(type: LinkTypes): QueryRef
-  _metadata: IContentMetadata
-  _modified: Date
-  _score: Float
-}
-
-type MenuNavigationBlockAutocomplete {
-  NavigationLinks: LinkAutocomplete
-  _metadata: IContentMetadataAutocomplete
-}
-
-type MenuNavigationBlockFacet {
-  NavigationLinks: LinkFacet
-  _metadata: IContentMetadataFacet
-}
-
-input MenuNavigationBlockOrderByInput {
-  NavigationLinks: LinkOrderByInput
-  _metadata: IContentMetadataOrderByInput
-  _minimumScore: Float
-  _modified: OrderBy
-  _ranking: Ranking
-
-  """
-  The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled.
-  """
-  _semanticWeight: Float
-}
-
-type MenuNavigationBlockOutput {
-  autocomplete: MenuNavigationBlockAutocomplete
-  cursor: String
-  facets: MenuNavigationBlockFacet
-  item: MenuNavigationBlock
-  items: [MenuNavigationBlock]
-  total(all: Boolean): Int
-}
-
-input MenuNavigationBlockWhereInput {
-  NavigationLinks: LinkWhereInput
-  _and: [MenuNavigationBlockWhereInput]
-  _fulltext: SearchableStringFilterInput
-  _metadata: IContentMetadataWhereInput
-  _modified: DateFilterInput
-  _not: [MenuNavigationBlockWhereInput]
-  _or: [MenuNavigationBlockWhereInput]
 }
 
 enum OrderBy {
@@ -1944,7 +1712,6 @@ type Query {
   BlogPostPage(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: BlogPostPageOrderByInput, skip: Int! = 0, where: BlogPostPageWhereInput): BlogPostPageOutput
   CTAComponent(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: CTAComponentOrderByInput, skip: Int! = 0, where: CTAComponentWhereInput): CTAComponentOutput
   CardComponent(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: CardComponentOrderByInput, skip: Int! = 0, where: CardComponentWhereInput): CardComponentOutput
-  CarouselBlock(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: CarouselBlockOrderByInput, skip: Int! = 0, where: CarouselBlockWhereInput): CarouselBlockOutput
   ContactComponent(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: ContactComponentOrderByInput, skip: Int! = 0, where: ContactComponentWhereInput): ContactComponentOutput
   ContactPage(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: ContactPageOrderByInput, skip: Int! = 0, where: ContactPageWhereInput): ContactPageOutput
   Data(cursor: String, ids: [String], limit: Int! = 20, locale: [system_Locales], orderBy: DataOrderByInput, skip: Int! = 0, where: DataWhereInput): DataOutput
@@ -1955,16 +1722,9 @@ type Query {
   ImageComponent(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: ImageComponentOrderByInput, skip: Int! = 0, where: ImageComponentWhereInput): ImageComponentOutput
   ImageMedia(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: ImageMediaOrderByInput, skip: Int! = 0, where: ImageMediaWhereInput): ImageMediaOutput
   LandingPage(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: LandingPageOrderByInput, skip: Int! = 0, where: LandingPageWhereInput): LandingPageOutput
-  LayoutContainerBlock(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: LayoutContainerBlockOrderByInput, skip: Int! = 0, where: LayoutContainerBlockWhereInput): LayoutContainerBlockOutput
-  MegaMenuGroupBlock(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: MegaMenuGroupBlockOrderByInput, skip: Int! = 0, where: MegaMenuGroupBlockWhereInput): MegaMenuGroupBlockOutput
-  MenuNavigationBlock(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: MenuNavigationBlockOrderByInput, skip: Int! = 0, where: MenuNavigationBlockWhereInput): MenuNavigationBlockOutput
   PageSeoSettings(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: PageSeoSettingsOrderByInput, skip: Int! = 0, where: PageSeoSettingsWhereInput): PageSeoSettingsOutput
   ParagraphComponent(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: ParagraphComponentOrderByInput, skip: Int! = 0, where: ParagraphComponentWhereInput): ParagraphComponentOutput
-  StandardPage(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: StandardPageOrderByInput, skip: Int! = 0, where: StandardPageWhereInput): StandardPageOutput
-  StartPage(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: StartPageOrderByInput, skip: Int! = 0, where: StartPageWhereInput): StartPageOutput
   SysContentFolder(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: SysContentFolderOrderByInput, skip: Int! = 0, where: SysContentFolderWhereInput): SysContentFolderOutput
-  TextBlock(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: TextBlockOrderByInput, skip: Int! = 0, where: TextBlockWhereInput): TextBlockOutput
-  Video(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: VideoOrderByInput, skip: Int! = 0, where: VideoWhereInput): VideoOutput
   VideoComponent(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: VideoComponentOrderByInput, skip: Int! = 0, where: VideoComponentWhereInput): VideoComponentOutput
   VideoMedia(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: VideoMediaOrderByInput, skip: Int! = 0, where: VideoMediaWhereInput): VideoMediaOutput
   _Component(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: _ComponentOrderByInput, skip: Int! = 0, where: _ComponentWhereInput): _ComponentOutput
@@ -1987,7 +1747,6 @@ type QueryRef {
   BlogPostPage(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: BlogPostPageOrderByInput, skip: Int! = 0, where: BlogPostPageWhereInput): BlogPostPageOutput
   CTAComponent(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: CTAComponentOrderByInput, skip: Int! = 0, where: CTAComponentWhereInput): CTAComponentOutput
   CardComponent(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: CardComponentOrderByInput, skip: Int! = 0, where: CardComponentWhereInput): CardComponentOutput
-  CarouselBlock(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: CarouselBlockOrderByInput, skip: Int! = 0, where: CarouselBlockWhereInput): CarouselBlockOutput
   ContactComponent(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: ContactComponentOrderByInput, skip: Int! = 0, where: ContactComponentWhereInput): ContactComponentOutput
   ContactPage(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: ContactPageOrderByInput, skip: Int! = 0, where: ContactPageWhereInput): ContactPageOutput
   Data(cursor: String, ids: [String], limit: Int! = 20, locale: [system_Locales], orderBy: DataOrderByInput, skip: Int! = 0, where: DataWhereInput): DataOutput
@@ -1998,16 +1757,9 @@ type QueryRef {
   ImageComponent(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: ImageComponentOrderByInput, skip: Int! = 0, where: ImageComponentWhereInput): ImageComponentOutput
   ImageMedia(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: ImageMediaOrderByInput, skip: Int! = 0, where: ImageMediaWhereInput): ImageMediaOutput
   LandingPage(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: LandingPageOrderByInput, skip: Int! = 0, where: LandingPageWhereInput): LandingPageOutput
-  LayoutContainerBlock(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: LayoutContainerBlockOrderByInput, skip: Int! = 0, where: LayoutContainerBlockWhereInput): LayoutContainerBlockOutput
-  MegaMenuGroupBlock(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: MegaMenuGroupBlockOrderByInput, skip: Int! = 0, where: MegaMenuGroupBlockWhereInput): MegaMenuGroupBlockOutput
-  MenuNavigationBlock(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: MenuNavigationBlockOrderByInput, skip: Int! = 0, where: MenuNavigationBlockWhereInput): MenuNavigationBlockOutput
   PageSeoSettings(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: PageSeoSettingsOrderByInput, skip: Int! = 0, where: PageSeoSettingsWhereInput): PageSeoSettingsOutput
   ParagraphComponent(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: ParagraphComponentOrderByInput, skip: Int! = 0, where: ParagraphComponentWhereInput): ParagraphComponentOutput
-  StandardPage(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: StandardPageOrderByInput, skip: Int! = 0, where: StandardPageWhereInput): StandardPageOutput
-  StartPage(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: StartPageOrderByInput, skip: Int! = 0, where: StartPageWhereInput): StartPageOutput
   SysContentFolder(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: SysContentFolderOrderByInput, skip: Int! = 0, where: SysContentFolderWhereInput): SysContentFolderOutput
-  TextBlock(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: TextBlockOrderByInput, skip: Int! = 0, where: TextBlockWhereInput): TextBlockOutput
-  Video(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: VideoOrderByInput, skip: Int! = 0, where: VideoWhereInput): VideoOutput
   VideoComponent(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: VideoComponentOrderByInput, skip: Int! = 0, where: VideoComponentWhereInput): VideoComponentOutput
   VideoMedia(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: VideoMediaOrderByInput, skip: Int! = 0, where: VideoMediaWhereInput): VideoMediaOutput
   _Component(cursor: String, ids: [String], limit: Int! = 20, locale: [Locales], orderBy: _ComponentOrderByInput, skip: Int! = 0, where: _ComponentWhereInput): _ComponentOutput
@@ -2103,162 +1855,6 @@ input SearchableStringFilterInput {
   expands query value with synonyms. Example: if `H2O` is a synonym of `water`, then querying for `water` will also return results with `H2O`.
   """
   synonyms: [SynonymSlot]
-}
-
-type StandardPage implements IData & _IContent & _IPage {
-  MainBody: RichText
-  SeoSettings: PageSeoSettingsProperty
-  StandardPageHeading: String
-  StandardPromoImage: ContentReference
-  StandardSubHeading: String
-  _children: QueryRef @deprecated(reason: "Use `_link` field instead")
-  _deleted: Bool
-  _fulltext(highlight: HighlightOptions): [String]
-  _id: String
-  _link(type: LinkTypes): QueryRef
-  _metadata: IContentMetadata
-  _modified: Date
-  _score: Float
-}
-
-type StandardPageAutocomplete {
-  MainBody: RichTextAutocomplete
-  SeoSettings: PageSeoSettingsPropertyAutocomplete
-  StandardPromoImage: ContentReferenceAutocomplete
-  _metadata: IContentMetadataAutocomplete
-}
-
-type StandardPageFacet {
-  MainBody: RichTextFacet
-  SeoSettings: PageSeoSettingsPropertyFacet
-  StandardPromoImage: ContentReferenceFacet
-  _metadata: IContentMetadataFacet
-}
-
-input StandardPageOrderByInput {
-  MainBody: RichTextOrderByInput
-  SeoSettings: PageSeoSettingsPropertyOrderByInput
-  StandardPromoImage: ContentReferenceOrderByInput
-  _metadata: IContentMetadataOrderByInput
-  _minimumScore: Float
-  _modified: OrderBy
-  _ranking: Ranking
-
-  """
-  The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled.
-  """
-  _semanticWeight: Float
-}
-
-type StandardPageOutput {
-  autocomplete: StandardPageAutocomplete
-  cursor: String
-  facets: StandardPageFacet
-  item: StandardPage
-  items: [StandardPage]
-  total(all: Boolean): Int
-}
-
-input StandardPageWhereInput {
-  MainBody: RichTextWhereInput
-  SeoSettings: PageSeoSettingsPropertyWhereInput
-  StandardPromoImage: ContentReferenceWhereInput
-  _and: [StandardPageWhereInput]
-  _fulltext: SearchableStringFilterInput
-  _metadata: IContentMetadataWhereInput
-  _modified: DateFilterInput
-  _not: [StandardPageWhereInput]
-  _or: [StandardPageWhereInput]
-}
-
-type StartPage implements IData & _IContent & _IPage {
-  FooterNavigationContentArea: [_IContent]
-  FooterNavigationCopyrightText: String
-  FooterNavigationSubLinks: [Link]
-  HomePageHeroContentArea: [_IContent]
-  HomePageMainContentArea: [_IContent]
-  MainNavigationContentArea: [_IContent]
-  SeoSettings: PageSeoSettingsProperty
-  SiteImageLogo: ContentReference
-  UtilityNavigationContentArea: [_IContent]
-  _children: QueryRef @deprecated(reason: "Use `_link` field instead")
-  _deleted: Bool
-  _fulltext(highlight: HighlightOptions): [String]
-  _id: String
-  _link(type: LinkTypes): QueryRef
-  _metadata: IContentMetadata
-  _modified: Date
-  _score: Float
-}
-
-type StartPageAutocomplete {
-  FooterNavigationContentArea: _IContentAutocomplete
-  FooterNavigationSubLinks: LinkAutocomplete
-  HomePageHeroContentArea: _IContentAutocomplete
-  HomePageMainContentArea: _IContentAutocomplete
-  MainNavigationContentArea: _IContentAutocomplete
-  SeoSettings: PageSeoSettingsPropertyAutocomplete
-  SiteImageLogo: ContentReferenceAutocomplete
-  UtilityNavigationContentArea: _IContentAutocomplete
-  _metadata: IContentMetadataAutocomplete
-}
-
-type StartPageFacet {
-  FooterNavigationContentArea: _IContentFacet
-  FooterNavigationSubLinks: LinkFacet
-  HomePageHeroContentArea: _IContentFacet
-  HomePageMainContentArea: _IContentFacet
-  MainNavigationContentArea: _IContentFacet
-  SeoSettings: PageSeoSettingsPropertyFacet
-  SiteImageLogo: ContentReferenceFacet
-  UtilityNavigationContentArea: _IContentFacet
-  _metadata: IContentMetadataFacet
-}
-
-input StartPageOrderByInput {
-  FooterNavigationContentArea: _IContentOrderByInput
-  FooterNavigationSubLinks: LinkOrderByInput
-  HomePageHeroContentArea: _IContentOrderByInput
-  HomePageMainContentArea: _IContentOrderByInput
-  MainNavigationContentArea: _IContentOrderByInput
-  SeoSettings: PageSeoSettingsPropertyOrderByInput
-  SiteImageLogo: ContentReferenceOrderByInput
-  UtilityNavigationContentArea: _IContentOrderByInput
-  _metadata: IContentMetadataOrderByInput
-  _minimumScore: Float
-  _modified: OrderBy
-  _ranking: Ranking
-
-  """
-  The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled.
-  """
-  _semanticWeight: Float
-}
-
-type StartPageOutput {
-  autocomplete: StartPageAutocomplete
-  cursor: String
-  facets: StartPageFacet
-  item: StartPage
-  items: [StartPage]
-  total(all: Boolean): Int
-}
-
-input StartPageWhereInput {
-  FooterNavigationContentArea: _IContentWhereInput
-  FooterNavigationSubLinks: LinkWhereInput
-  HomePageHeroContentArea: _IContentWhereInput
-  HomePageMainContentArea: _IContentWhereInput
-  MainNavigationContentArea: _IContentWhereInput
-  SeoSettings: PageSeoSettingsPropertyWhereInput
-  SiteImageLogo: ContentReferenceWhereInput
-  UtilityNavigationContentArea: _IContentWhereInput
-  _and: [StartPageWhereInput]
-  _fulltext: SearchableStringFilterInput
-  _metadata: IContentMetadataWhereInput
-  _modified: DateFilterInput
-  _not: [StartPageWhereInput]
-  _or: [StartPageWhereInput]
 }
 
 type StringFacet {
@@ -2374,81 +1970,6 @@ input SysContentFolderWhereInput {
   _or: [SysContentFolderWhereInput]
 }
 
-type TextBlock implements IData & _IComponent & _IContent {
-  TextBlockDescription: RichText
-  TextBlockHeading: String
-  TextBlockHeadingSize: String
-  TextBlockOverline: String
-  TextBlockWidth: String
-  TextCenter: Boolean
-  TextClassName: String
-  _children: QueryRef @deprecated(reason: "Use `_link` field instead")
-  _deleted: Bool
-  _fulltext(highlight: HighlightOptions): [String]
-  _id: String
-  _link(type: LinkTypes): QueryRef
-  _metadata: IContentMetadata
-  _modified: Date
-  _score: Float
-}
-
-type TextBlockAutocomplete {
-  TextBlockDescription: RichTextAutocomplete
-  _metadata: IContentMetadataAutocomplete
-}
-
-type TextBlockFacet {
-  TextBlockDescription: RichTextFacet
-  _metadata: IContentMetadataFacet
-}
-
-input TextBlockOrderByInput {
-  TextBlockDescription: RichTextOrderByInput
-  _metadata: IContentMetadataOrderByInput
-  _minimumScore: Float
-  _modified: OrderBy
-  _ranking: Ranking
-
-  """
-  The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled.
-  """
-  _semanticWeight: Float
-}
-
-type TextBlockOutput {
-  autocomplete: TextBlockAutocomplete
-  cursor: String
-  facets: TextBlockFacet
-  item: TextBlock
-  items: [TextBlock]
-  total(all: Boolean): Int
-}
-
-input TextBlockWhereInput {
-  TextBlockDescription: RichTextWhereInput
-  _and: [TextBlockWhereInput]
-  _fulltext: SearchableStringFilterInput
-  _metadata: IContentMetadataWhereInput
-  _modified: DateFilterInput
-  _not: [TextBlockWhereInput]
-  _or: [TextBlockWhereInput]
-}
-
-type Video implements IData & _IContent & _IMedia & _IVideo {
-  _children: QueryRef @deprecated(reason: "Use `_link` field instead")
-  _deleted: Bool
-  _fulltext(highlight: HighlightOptions): [String]
-  _id: String
-  _link(type: LinkTypes): QueryRef
-  _metadata: IContentMetadata
-  _modified: Date
-  _score: Float
-}
-
-type VideoAutocomplete {
-  _metadata: IContentMetadataAutocomplete
-}
-
 type VideoComponent implements IData & _IComponent & _IContent {
   _children: QueryRef @deprecated(reason: "Use `_link` field instead")
   _deleted: Bool
@@ -2509,10 +2030,6 @@ input VideoComponentWhereInput {
   video: ContentReferenceWhereInput
 }
 
-type VideoFacet {
-  _metadata: IContentMetadataFacet
-}
-
 type VideoMedia implements IData & _IContent & _IMedia & _IVideo {
   _children: QueryRef @deprecated(reason: "Use `_link` field instead")
   _deleted: Bool
@@ -2560,36 +2077,6 @@ input VideoMediaWhereInput {
   _modified: DateFilterInput
   _not: [VideoMediaWhereInput]
   _or: [VideoMediaWhereInput]
-}
-
-input VideoOrderByInput {
-  _metadata: IContentMetadataOrderByInput
-  _minimumScore: Float
-  _modified: OrderBy
-  _ranking: Ranking
-
-  """
-  The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled.
-  """
-  _semanticWeight: Float
-}
-
-type VideoOutput {
-  autocomplete: VideoAutocomplete
-  cursor: String
-  facets: VideoFacet
-  item: Video
-  items: [Video]
-  total(all: Boolean): Int
-}
-
-input VideoWhereInput {
-  _and: [VideoWhereInput]
-  _fulltext: SearchableStringFilterInput
-  _metadata: IContentMetadataWhereInput
-  _modified: DateFilterInput
-  _not: [VideoWhereInput]
-  _or: [VideoWhereInput]
 }
 
 type _Component implements IData & _IComponent & _IContent {

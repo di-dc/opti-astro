@@ -19,11 +19,10 @@ const config: CodegenConfig = {
         },
         './src/services/graphql/__generated/sdk.ts': {
             documents: [
-                //"./src/services/graphql/**/*.graphql",
                 './src/services/graphql/fragments/**/*.graphql',
                 './src/services/graphql/queries/**/*.graphql',
                 './src/components/cms/VisualBuilder/**/*.graphql',
-                //"./src/components/**/*.astro",
+                './src/components/cms/OnPageEditing/**/*.graphql',
             ],
             plugins: [
                 'typescript',
