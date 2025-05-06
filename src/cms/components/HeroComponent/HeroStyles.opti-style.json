@@ -1,0 +1,35 @@
+{
+    "key": "HeroStyles",
+    "displayName": "Hero Display Style",
+    "contentType": "Hero",
+    "isDefault": true,
+    "settings": {
+        "displayType": {
+            "displayName": "Hero Display Style",
+            "editor": "",
+            "sortOrder": 10,
+            "choices": {
+                "basic": {
+                    "displayName": "Centered hero",
+                    "sortOrder": 10
+                },
+                "imageLeft": {
+                    "displayName": "Left Image",
+                    "sortOrder": 20
+                },
+                "imageRight": {
+                    "displayName": "Right Image",
+                    "sortOrder": 30
+                },
+                "imageOverlay": {
+                    "displayName": "Image Overlay",
+                    "sortOrder": 40
+                },
+                "videoOverlay": {
+                    "displayName": "Video Overlay",
+                    "sortOrder": 50
+                }
+            }
+        }
+    }
+}
