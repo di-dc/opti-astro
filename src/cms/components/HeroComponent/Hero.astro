@@ -9,9 +9,10 @@ import { getDictionaryFromDisplaySettings } from '../../../graphql/shared/displa
 export interface Props {
     data: HeroFragment;
     displaySettings: DisplaySettingsFragment[];
+    displayTemplateKey: string;
     contentPayload: ContentPayload;
 }
-const { data, displaySettings } = Astro.props as Props;
+const { data, displaySettings, displayTemplateKey } = Astro.props as Props;
 
 // Get settings from display settings
 const settings = getDictionaryFromDisplaySettings(displaySettings);
@@ -21,64 +22,379 @@ const videoUrl = data?.Video?.url?.default ?? null;
 const imageUrl = data?.Image?.url?.default || null;
 const hasVideo = videoUrl !== null;
 
+console.log("displayTemplateKey: " + displayTemplateKey);
 console.log("hero display: " + JSON.stringify(settings));
 console.log("heroStyle: " + heroStyle);
+console.log("settings?.imagePlacementType: " + settings?.imagePlacementType)
+
+console.log("links: " + JSON.stringify(data?.Links))
+console.log("link 1: " + JSON.stringify(data?.Links[0]))
+console.log("link 2: " + JSON.stringify(data?.Links[1]))
+
+/* Hero TODO
+* Fix rendering inside CMS.... (Again)
+* Update order of properties on Hero
+
+* Buttons
+    * Change content type properties to Primary and Secondary buttons, to help with rendering? 
+    * Or update property to only allow 2 links on hero?
+
+* Styles
+    * Header style -- H1, H2, etc (or small/medium/large/x-large ?)
+    * Subheader style -- H1, H2, etc (or small/medium/large/x-large ?)
+    * Hero contents -- left / center / right
+    * Image Left/Right -- image size (small / medium / large?)
+    * 
+    * Video -- background video brightness -- backdrop-brightness-50
+
+    * UPDATE: change to "media display: no image, image left, image right, image overlay, video overlay"
+*/
 ---
 
-<section class="relative flex h-[48rem] w-full items-center justify-center">
-    {
-        hasVideo && videoUrl && (
-            <video
-                autoplay
-                loop
-                muted
-                playsinline
-                class="absolute inset-0 h-full w-full object-cover"
-                id="hero-video"
-            >
-                <source src={videoUrl} type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
-        )
-    }
 
-    {
-        !hasVideo && imageUrl && (
-            <img
-                src={imageUrl}
-                alt="Hero Background"
-                class="absolute inset-0 h-full w-full object-cover"
-                id="hero-image"
-            />
-        )
-    }
-
-    <!-- Dark Overlay for Better Readability -->
-    <div class="absolute inset-0 bg-black/60"></div>
-
-    <!-- Content -->
-    <div class="relative z-10 px-6 text-center text-white">
-        <h1 class="text-5xl font-bold md:text-6xl">{data?.Heading}</h1>
-        <p class="mx-auto mt-4 max-w-2xl text-lg">
-            {data?.SubHeading}
-        </p>
-        <p
-            class="mx-auto mt-4 max-w-2xl text-base text-gray-200"
-            set:html={data.Body?.html}
-        />
-
-        <!-- Buttons -->
-        <div class="mt-6 flex justify-center space-x-4">
-            {
-                data?.Links?.map((link) => (
-                    <a
-                        href={link?.url?.default}
-                        class="rounded-full bg-black/90 px-6 py-3 font-semibold text-white shadow-lg hover:bg-blue-700"
-                    >
-                        {link?.text}
-                    </a>
-                ))
+{
+    () => {
+        switch (displayTemplateKey) {
+            case 'HeroBasicStyles': {
+                return (
+                    <div class="hero bg-base-200 h-[48rem] w-full">
+                        <div class="hero-content text-center">
+                            <div class="max-w-md">
+                            <h1 class="text-5xl font-bold">{data?.Heading}</h1>
+                            <h2 class="mt-6 max-w-2xl text-2xl">
+                                {data?.SubHeading}
+                            </h2>
+                            <div class="py-6"
+                                set:html={data.Body?.html}
+                            />
+                            {
+                                data?.Links[0] && (
+                                    <a role="button" class="btn btn-primary px-6 mx-2" href={data?.Links[0]?.url?.default}>{data?.Links[0].text}</button>
+                                )
+                            }
+                            {
+                                data?.Links[1] && (
+                                    <a role="button" class="btn btn-secondary px-6 mx-2" href={data?.Links[1]?.url?.default}>{data?.Links[1].text}</button>
+                                )
+                            }
+                            </div>
+                        </div>
+                    </div>
+                )
             }
+
+            case 'HeroWithSideImage': {
+                return (
+                    <div class="hero bg-base-200 h-[48rem]">
+                        <div class={`hero-content flex-col lg:flex-row ${settings?.imagePlacementType == 'left' ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+                            <img
+                                src={imageUrl}
+                                alt="Hero Image"
+                                id="hero-image"
+                                class="max-w-sm rounded-lg shadow-2xl"
+                            />
+                            <div>
+                            <h1 class="text-5xl font-bold">{data?.Heading}</h1>
+                            <h2 class="mt-6 max-w-2xl text-2xl">
+                                {data?.SubHeading}
+                            </h2>
+                            <div class="py-6"
+                                set:html={data.Body?.html}
+                            />
+                            {
+                                data?.Links[0] && (
+                                    <a role="button" class="btn btn-primary px-6 mx-2" href={data?.Links[0]?.url?.default}>{data?.Links[0].text}</button>
+                                )
+                            }
+                            {
+                                data?.Links[1] && (
+                                    <a role="button" class="btn btn-secondary px-6 mx-2" href={data?.Links[1]?.url?.default}>{data?.Links[1].text}</button>
+                                )
+                            }
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+
+            case 'HeroWithImageOverlay': {
+                return (
+                    <div
+                        class="hero  inset-0 h-[48rem] w-full object-cover"
+                        style={"background-image: url(" + imageUrl + ");"}
+                        >
+                        <div class="hero-overlay"></div>
+                        <div class="hero-content text-neutral-content text-center">
+                            <div class="max-w-md">
+                            <h1 class="mb-5 text-5xl font-bold">{data?.Heading}</h1>
+                            <h2 class="mt-6 max-w-2xl text-2xl">
+                                {data?.SubHeading}
+                            </h2>
+                            <div class="py-6"
+                                set:html={data.Body?.html}
+                            />
+                            {
+                                data?.Links[0] && (
+                                    <a role="button" class="btn btn-primary px-6 mx-2" href={data?.Links[0]?.url?.default}>{data?.Links[0].text}</button>
+                                )
+                            }
+                            {
+                                data?.Links[1] && (
+                                    <a role="button" class="btn btn-secondary px-6 mx-2" href={data?.Links[1]?.url?.default}>{data?.Links[1].text}</button>
+                                )
+                            }
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+
+            case 'HeroWithVideoOverlay': {
+                return (
+                    <h1>HeroWithVideoOverlay</h1>
+                )
+            }            
+        }
+    }
+}
+
+
+<!-- 
+{
+    data && heroStyle === "basic" && (
+        <div class="hero bg-base-200 h-[48rem] w-full">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                <h1 class="text-5xl font-bold">{data?.Heading}</h1>
+                <h2 class="mt-6 max-w-2xl text-2xl">
+                    {data?.SubHeading}
+                </h2>
+                <div class="py-6"
+                    set:html={data.Body?.html}
+                />
+                {
+                    data?.Links[0] && (
+                        <a role="button" class="btn btn-primary px-6 mx-2" href={data?.Links[0]?.url?.default}>{data?.Links[0].text}</button>
+                    )
+                }
+                {
+                    data?.Links[1] && (
+                        <a role="button" class="btn btn-secondary px-6 mx-2" href={data?.Links[1]?.url?.default}>{data?.Links[1].text}</button>
+                    )
+                }
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    )
+}
+
+{
+    data && heroStyle === "imageLeft" && (
+        <div class="hero bg-base-200 h-[48rem]">
+            <div class="hero-content flex-col lg:flex-row">
+                <img
+                    src={imageUrl}
+                    alt="Hero Image"
+                    id="hero-image"
+                    class="max-w-sm rounded-lg shadow-2xl"
+                />
+                <div>
+                <h1 class="text-5xl font-bold">{data?.Heading}</h1>
+                <h2 class="mt-6 max-w-2xl text-2xl">
+                    {data?.SubHeading}
+                </h2>
+                <div class="py-6"
+                    set:html={data.Body?.html}
+                />
+                {
+                    data?.Links[0] && (
+                        <a role="button" class="btn btn-primary px-6 mx-2" href={data?.Links[0]?.url?.default}>{data?.Links[0].text}</button>
+                    )
+                }
+                {
+                    data?.Links[1] && (
+                        <a role="button" class="btn btn-secondary px-6 mx-2" href={data?.Links[1]?.url?.default}>{data?.Links[1].text}</button>
+                    )
+                }
+                </div>
+            </div>
+        </div>
+    )
+}
+
+{
+    data && heroStyle === "imageRight" && (
+        <div class="hero bg-base-200 h-[48rem]">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <img
+                    src={imageUrl}
+                    alt="Hero Image"
+                    id="hero-image"
+                    class="max-w-sm rounded-lg shadow-2xl"
+                />
+                <div>
+                <h1 class="text-5xl font-bold">{data?.Heading}</h1>
+                <h2 class="mt-6 max-w-2xl text-2xl">
+                    {data?.SubHeading}
+                </h2>
+                <div class="py-6"
+                    set:html={data.Body?.html}
+                />
+                {
+                    data?.Links[0] && (
+                        <a role="button" class="btn btn-primary px-6 mx-2" href={data?.Links[0]?.url?.default}>{data?.Links[0].text}</button>
+                    )
+                }
+                {
+                    data?.Links[1] && (
+                        <a role="button" class="btn btn-secondary px-6 mx-2" href={data?.Links[1]?.url?.default}>{data?.Links[1].text}</button>
+                    )
+                }
+                </div>
+            </div>
+        </div>
+    )
+} -->
+
+{
+    data && heroStyle === "imageOverlay" && (
+        <div
+            // class="hero min-h-screen"
+            class="hero absolute inset-0 h-full w-full object-cover"
+            style={"background-image: url(" + imageUrl + ");"}
+            >
+            <div class="hero-overlay"></div>
+            <div class="hero-content text-neutral-content text-center">
+                <div class="max-w-md">
+                <h1 class="mb-5 text-5xl font-bold">{data?.Heading}</h1>
+                <h2 class="mt-6 max-w-2xl text-2xl">
+                    {data?.SubHeading}
+                </h2>
+                <div class="py-6"
+                    set:html={data.Body?.html}
+                />
+                {
+                    data?.Links[0] && (
+                        <a role="button" class="btn btn-primary px-6 mx-2" href={data?.Links[0]?.url?.default}>{data?.Links[0].text}</button>
+                    )
+                }
+                {
+                    data?.Links[1] && (
+                        <a role="button" class="btn btn-secondary px-6 mx-2" href={data?.Links[1]?.url?.default}>{data?.Links[1].text}</button>
+                    )
+                }
+                </div>
+            </div>
+        </div>
+    )
+}
+
+{
+    data && heroStyle === "videoOverlay" && (
+        <div class="hero h-[48rem] inset-0 relative flex w-full items-center justify-center">
+            { 
+                hasVideo && videoUrl && (
+                    <video
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        class="absolute inset-0 h-full w-full object-cover brightness-40"
+                        id="hero-video"
+                    >
+                        <source src={videoUrl} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                )
+            }
+            <div class="hero-content text-neutral-content text-center">
+                <div class="max-w-md">
+                    <h1 class="mb-5 text-5xl font-bold">{data?.Heading}</h1>
+                    <h2 class="mt-6 max-w-2xl text-2xl">
+                        {data?.SubHeading}
+                    </h2>
+                    <div class="py-6"
+                        set:html={data.Body?.html}
+                    />
+                    {
+                        data?.Links[0] && (
+                            <a role="button" class="btn btn-primary px-6 mx-2" href={data?.Links[0]?.url?.default}>{data?.Links[0].text}</button>
+                        )
+                    }
+                    {
+                        data?.Links[1] && (
+                            <a role="button" class="btn btn-secondary px-6 mx-2" href={data?.Links[1]?.url?.default}>{data?.Links[1].text}</button>
+                        )
+                    }
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
+<!-- BREAK -->
+
+
+{
+    data && (heroStyle === "OLD" || heroStyle === "OLD") && (
+
+    <section class="relative flex h-[48rem] w-full items-center justify-center">
+        {
+            hasVideo && videoUrl && (
+                <video
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    class="absolute inset-0 h-full w-full object-cover"
+                    id="hero-video"
+                >
+                    <source src={videoUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            )
+        }
+
+        {
+            !hasVideo && imageUrl && (
+                <img
+                    src={imageUrl}
+                    alt="Hero Background"
+                    class="absolute inset-0 h-full w-full object-cover"
+                    id="hero-image"
+                />
+            )
+        }
+
+        <!-- Dark Overlay for Better Readability -->
+        <div class="absolute inset-0 bg-black/60"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 px-6 text-center text-white">
+            <h1 class="text-5xl font-bold md:text-6xl">{data?.Heading}</h1>
+            <p class="mx-auto mt-4 max-w-2xl text-lg">
+                {data?.SubHeading}
+            </p>
+            <p
+                class="mx-auto mt-4 max-w-2xl text-base text-gray-200"
+                set:html={data.Body?.html}
+            />
+
+            <!-- Buttons -->
+            <div class="mt-6 flex justify-center space-x-4">
+                {
+                    data?.Links?.map((link) => (
+                        <a
+                            href={link?.url?.default}
+                            class="rounded-full bg-black/90 px-6 py-3 font-semibold text-white shadow-lg hover:bg-blue-700"
+                        >
+                            {link?.text}
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+    )
+}

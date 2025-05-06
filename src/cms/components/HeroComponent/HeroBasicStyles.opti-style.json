@@ -1,0 +1,27 @@
+{
+    "key": "HeroBasic",
+    "displayName": "Basic Hero (No Image)",
+    "contentType": "Hero",
+    "isDefault": false,
+    "settings": {
+        "alignmentType": {
+            "displayName": "Text Alignment",
+            "editor": "",
+            "sortOrder": 20,
+            "choices": {
+                "center": {
+                    "displayName": "Center",
+                    "sortOrder": 10
+                },
+                "left": {
+                    "displayName": "Left",
+                    "sortOrder": 20
+                },
+                "right": {
+                    "displayName": "Right",
+                    "sortOrder": 30
+                }
+            }
+        }
+    }
+}

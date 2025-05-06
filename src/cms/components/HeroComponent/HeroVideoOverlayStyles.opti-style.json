@@ -1,0 +1,31 @@
+{
+    "key": "HeroWithVideoOverlay",
+    "displayName": "Hero With Video Overlay",
+    "contentType": "Hero",
+    "isDefault": false,
+    "settings": {
+        "videoBrightness": {
+            "displayName": "Video Brightness",
+            "editor": "",
+            "sortOrder": 20,
+            "choices": {
+                "FullBrightness": {
+                    "displayName": "100",
+                    "sortOrder": 10
+                },
+                "LightOverlay": {
+                    "displayName": "75",
+                    "sortOrder": 20
+                },
+                "DarkOverlay": {
+                    "displayName": "50",
+                    "sortOrder": 30
+                },
+                "Darkest": {
+                    "displayName": "25",
+                    "sortOrder": 40
+                }
+            }
+        }
+    }
+}
