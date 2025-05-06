@@ -3472,7 +3472,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "acorn@npm:^8.14.1, acorn@npm:^8.6.0, acorn@npm:^8.8.0":
+=======
+"acorn@npm:^8.14.1, acorn@npm:^8.6.0":
+>>>>>>> d8a3550 (WIP: Vercel config)
   version: 8.14.1
   resolution: "acorn@npm:8.14.1"
   bin:
@@ -3782,6 +3786,13 @@ __metadata:
   bin:
     astro: astro.js
   checksum: 10c0/124d40e023d3126ecb307ccdc17f7a195ddac8d22a8ef826f5915ef2c41f38e63976a10738705afc1b60119dcd32f26a9e3a3799b297df611dfe75e2124273f5
+  languageName: node
+  linkType: hard
+
+"async-sema@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "async-sema@npm:3.1.1"
+  checksum: 10c0/a16da9f7f2dbdd00a969bf264b7ad331b59df3eac2b38f529b881c5cc8662594e68ed096d927ec2aabdc13454379cdc6d677bcdb0a3d2db338fb4be17957832b
   languageName: node
   linkType: hard
 
