@@ -1,7 +1,9 @@
 ---
-import type { DisplaySettingsFragment, ParagraphFragment } from '../../../../__generated/sdk';
+import type {
+    DisplaySettingsFragment,
+    ParagraphFragment,
+} from '../../../../__generated/sdk';
 import type { ContentPayload } from '../../../graphql/shared/ContentPayload';
-
 
 export interface Props {
     data: ParagraphFragment;
@@ -11,4 +13,4 @@ export interface Props {
 const { data } = Astro.props as Props;
 ---
 
-<div set:html={data.Text?.html} />
+<div class="prose lg:prose-xl" set:html={data.Text?.html} />
