@@ -1,11 +1,13 @@
 ---
 import type {
-    CardFragment,
-    DisplaySettingsFragment,
+CardFragment,
+DisplaySettingsFragment,
 } from '../../../../__generated/sdk';
 
 import type { ContentPayload } from '../../../graphql/shared/ContentPayload';
 import { getDictionaryFromDisplaySettings } from '../../../graphql/shared/displaySettingsHelpers';
+import { getAssetWidthClass, getContentWidthClass } from './CardHelper';
+import { getAssetVerticalAlignClass, getContentVerticalAlignClass } from './CardStyling';
 import Asset from './Asset.astro';
 import Content from './Content.astro';
 import Wrapper from './Wrapper.astro';
@@ -21,47 +23,29 @@ const { data, displaySettings, displayTemplateKey, contentPayload } =
 const dictionary = getDictionaryFromDisplaySettings(displaySettings);
 const { backgroundColor } = dictionary;
 const { DisplayAs } = data;
+const assetWidthClass = getAssetWidthClass(dictionary);
+const contentWidthClass = getContentWidthClass(dictionary);
+const assetVerticalAlignClass = getAssetVerticalAlignClass(displaySettings);
+const contentVerticalAlignClass = getContentVerticalAlignClass(displaySettings);
 ---
 
-{
-    () => {
-        switch (DisplayAs) {
-            case 'textOnRight':
-            case 'textBelowCard':
-                return (
-                    <Wrapper DisplayAs={DisplayAs}>
-                        <Asset
-                            data={data}
-                            displaySettings={displaySettings}
-                            displayTemplateKey={displayTemplateKey}
-                            contentPayload={contentPayload}
-                        />
-                        <Content
-                            data={data}
-                            displaySettings={displaySettings}
-                            displayTemplateKey={displayTemplateKey}
-                            contentPayload={contentPayload}
-                        />
-                    </Wrapper>
-                );
-            case 'textOnLeft':
-            case 'textAboveCard':
-                return (
-                    <Wrapper DisplayAs={DisplayAs}>
-                        <Content
-                            data={data}
-                            displaySettings={displaySettings}
-                            displayTemplateKey={displayTemplateKey}
-                            contentPayload={contentPayload}
-                        />
-                        <Asset
-                            data={data}
-                            displaySettings={displaySettings}
-                            displayTemplateKey={displayTemplateKey}
-                            contentPayload={contentPayload}
-                        />
-                    </Wrapper>
-                );
-        }
-    }
-}
+<Wrapper DisplayAs={DisplayAs ?? ''}>
+    <Asset
+        data={data}
+        displaySettings={displaySettings}
+        displayTemplateKey={displayTemplateKey}
+        contentPayload={contentPayload}
+        DisplayAs={DisplayAs ?? undefined}
+        widthClass={assetWidthClass}
+        verticalAlignClass={assetVerticalAlignClass}
+    />
+    <Content
+        data={data}
+        displaySettings={displaySettings}
+        displayTemplateKey={displayTemplateKey}
+        contentPayload={contentPayload}
+        DisplayAs={DisplayAs ?? undefined}
+        widthClass={contentWidthClass}
+        verticalAlignClass={contentVerticalAlignClass}
+    />
+</Wrapper>
